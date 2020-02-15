@@ -1,0 +1,21 @@
+TIMEZONE=Europe/Moscow
+
+#base system image: nvidia/cuda:${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel-ubuntu18.04
+CUDA_VERSION=10.2
+CUDNN_VERSION=7
+
+#you can check miniconda version and hash here: https://repo.continuum.io/miniconda/
+MINICONDA_VERSION=latest
+MINICONDA_MD5_HASH=81c773ff87af5cfac79ab862942ab6b3
+
+#name for building base image: from Dockerfile.KernelBase
+BASE_IMAGE_NAME=jhkernelbase:14.02.2020
+#name for building main image: from Dockerfile.DLkernel
+JUPYTER_DOCKER_IMAGE_NAME=deeplearning-jupyter-docker:14.02.2020
+
+#your name and password which will used inside container
+JUPYTER_USER_NAME=deadat0m
+JUPYTER_USER_PASSWORD=<your password>
+
+#path to folder you want to mount as home
+PATH_MOUNT_HOME_FOLDER=/home/deadat0m

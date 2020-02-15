@@ -1,0 +1,88 @@
+name: base
+channels:
+- defaults
+- anaconda
+- pytorch
+- conda-forge
+dependencies:
+# Jupyter
+- jupyterlab
+- jupyterhub
+- widgetsnbextension
+- ipywidgets
+- nb_conda_kernels
+- jupyter_contrib_nbextensions
+- jupyter_nbextensions_configurator
+- nodejs
+# Plotting, visualization
+- matplotlib
+- ipympl>=0.4.1
+- seaborn
+- plotly
+- bokeh
+- mayavi
+- cycler
+# ML
+- pytorch>=1.4.0
+- cudatoolkit=10.1
+- torchvision
+- tensorflow-gpu
+- tensorboard
+- keras
+- ignite
+- tensorboardx
+- scikit-learn
+- scipy
+- pydot
+- catboost
+- statsmodels
+# Image processing
+- opencv
+- pillow==6.1
+- cython
+- scikit-image
+- pywavelets
+# unit-testing
+- nose
+- pytest
+- pytest-cov
+- pytest-faulthandler
+# other
+- pip
+- mne
+- decorator
+- jinja2
+- numpy
+- pandas
+- pyqt>=5.9
+- python-dateutil
+- requests
+- sympy
+- tqdm
+- dill
+- protobuf
+- ldap3
+- xeus-python>=0.6.7
+- ptvsd
+- jupyterlab-nvdashboard
+- jupyter-archive
+- python-language-server
+- black
+- jupyterlab_code_formatter
+- pip:
+  - jupyterlab_hdf
+  - ray
+  - pyro-ppl 
+  - rlgraph[ray]
+  - jupyter-tensorboard
+  - arxiv
+  - jupyterlab_latex
+  - jupyterlab-git
+  - python-picard
+  - pytorch_memlab
+  - jupyter-lsp
+  - jupyter-conda
+  - nbresuse
+  - bash_kernel
+  - thop
+

@@ -1,0 +1,82 @@
+ARG BASE_IMAGE_NAME
+FROM ${BASE_IMAGE_NAME}
+
+MAINTAINER DeadAt0m <kheldi@yandex.ru>
+# Back again to root
+USER root  
+
+# Install python and r enviroment
+COPY ./resources/conda-env-py3.yml conda-env-py3.yml
+RUN xvfb start && conda env update --file conda-env-py3.yml  && \
+    conda clean -tipsy  && \
+    rm conda-env-py3.yml && fix-permissions $CONDA_DIR && conda list && xvfb stop 
+
+# Postinstallation fixes
+ENV DISPLAY :2
+ENV MKL_THREADING_LAYER GNU
+RUN mkdir -p /home/$NB_USER/.ipython/profile_default/startup
+RUN chown -R $NB_USER:$NB_GID /home/$NB_USER  && chmod 777 -R /home/$NB_USER/.jupyter
+
+
+USER $NB_USER
+
+# Configure jupyter notebook and lab extenstions
+RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+    jupyter nbextension install --py mayavi --user && \
+    jupyter nbextension enable autosavetime/main && \
+    jupyter nbextension enable code_prettify/code_prettify && \
+    jupyter nbextension enable keyboard_shortcut_editor/main && \
+    jupyter nbextension enable spellchecker/main && \
+    jupyter nbextension enable toggle_all_line_numbers/main && \
+    jupyter nbextension enable codefolding/main && \
+    jupyter nbextension enable highlighter/highlighter && \
+    jupyter nbextension enable code_prettify/isort && \
+    jupyter nbextension enable scratchpad/main && \
+    jupyter nbextension enable tree-filter/index && \
+    jupyter nbextension enable rubberband/main && \
+    jupyter nbextension enable varInspector/main && \
+    jupyter nbextension enable datestamper/main && \
+    jupyter nbextension enable snippets_menu/main && \
+    jupyter serverextension enable --py jupyterlab --sys-prefix && \
+    jupyter serverextension enable --py jupyterlab_code_formatter && \
+    jupyter serverextension enable --py jupyterlab_git && \
+    jupyter labextension install @krassowski/jupyterlab-lsp \
+				 @ryantam626/jupyterlab_code_formatter \
+                                 @jupyterlab/debugger  \ 
+                                 @hadim/jupyter-archive \
+                                 @jupyter-widgets/jupyterlab-manager \
+ 				 @jupyterlab/celltags  \
+				 @jupyterlab/dataregistry-extension \
+ 				 @jupyterlab/git \
+ 				 @jupyterlab/hdf5  \
+				 @jupyterlab/katex-extension  \
+ 				 @jupyterlab/latex  \
+				 @jupyterlab/mathjax3-extension \
+				 @jupyterlab/plotly-extension \
+				 @krassowski/jupyterlab_go_to_definition \
+				 @lckr/jupyterlab_variableinspector  \
+			 	 @mflevine/jupyterlab_html  \
+			 	 @oriolmirosa/jupyterlab_materialdarker \
+				 jupyter-matplotlib \
+				 jupyterlab-drawio  \
+				 jupyterlab-kernelspy  \
+ 				 jupyterlab-nvdashboard  \
+				 jupyterlab-python-file  \
+  				 jupyterlab-system-monitor  \
+   				 jupyterlab-tailwind-theme  \
+ 				 jupyterlab-topbar-extension \
+ 				 jupyterlab-topbar-text  \
+				 jupyterlab_bokeh \
+			 	 jupyterlab_conda  \
+ 				 jupyterlab_tensorboard  \
+   				 jupyterlab_toastify  \
+				 @telamonian/theme-darcula \
+				 @karosc/jupyterlab_dracula \ 
+				 @rahlir/theme-gruvbox \
+ 				 @mohirio/jupyterlab-horizon-theme \
+				 @yeebc/jupyterlab_neon_theme \ 
+				 jupyterlab-spreadsheet \
+   				 qgrid && \
+    npm cache clean --force && \
+    rm -rf $CONDA_DIR/share/jupyter/lab/staging
+
