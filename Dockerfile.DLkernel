@@ -45,7 +45,6 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
                                  @jupyterlab/debugger  \ 
                                  @hadim/jupyter-archive \
                                  @jupyter-widgets/jupyterlab-manager \
- 				 @jupyterlab/celltags  \
 				 @jupyterlab/dataregistry-extension \
  				 @jupyterlab/git \
  				 @jupyterlab/hdf5  \
