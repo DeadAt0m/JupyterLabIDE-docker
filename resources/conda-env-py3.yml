@@ -69,6 +69,7 @@ dependencies:
 - python-language-server
 - black
 - jupyterlab_code_formatter
+- python-lmdb
 - pip:
   - jupyterlab_hdf
   - ray
