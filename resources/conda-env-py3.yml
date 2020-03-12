@@ -1,9 +1,9 @@
 name: base
 channels:
 - defaults
-- anaconda
-- pytorch
 - conda-forge
+- pytorch
+- anaconda
 dependencies:
 # Jupyter
 - jupyterlab
@@ -23,16 +23,16 @@ dependencies:
 - mayavi
 - cycler
 # ML
-- pytorch>=1.4.0
+- pytorch>=1.4
 - cudatoolkit=10.1
-- torchvision
+- torchvision>=0.5
 - tensorflow-gpu
 - tensorboard
-- keras
-- ignite
+- keras>=2.3
+- ignite>=0.3
 - tensorboardx
 - scikit-learn
-- scipy
+- scipy>=1.4
 - pydot
 - catboost
 - statsmodels
@@ -53,7 +53,7 @@ dependencies:
 - decorator
 - jinja2
 - numpy
-- pandas
+- pandas>=1.0.0
 - pyqt>=5.9
 - python-dateutil
 - requests
