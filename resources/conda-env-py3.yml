@@ -23,7 +23,7 @@ dependencies:
 - mayavi
 - cycler
 # ML
-- pytorch>=1.4
+- pytorch>=1.5
 - cudatoolkit=10.1
 - torchvision>=0.5
 - tensorflow-gpu
