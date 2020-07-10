@@ -45,13 +45,13 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
                                  @jupyterlab/debugger  \ 
                                  @hadim/jupyter-archive \
                                  @jupyter-widgets/jupyterlab-manager \
-				 @jupyterlab/dataregistry-extension \
+#				 @jupyterlab/dataregistry-extension \
  				 @jupyterlab/git \
- 				 @jupyterlab/hdf5  \
+# 				 @jupyterlab/hdf5  \
 				 @jupyterlab/katex-extension  \
- 				 @jupyterlab/latex  \
+# 				 @jupyterlab/latex  \
 				 @jupyterlab/mathjax3-extension \
-				 @jupyterlab/plotly-extension \
+#				 @jupyterlab/plotly-extension \
 				 @krassowski/jupyterlab_go_to_definition \
 				 @lckr/jupyterlab_variableinspector  \
 			 	 @mflevine/jupyterlab_html  \
@@ -65,13 +65,13 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
    				 jupyterlab-tailwind-theme  \
  				 jupyterlab-topbar-extension \
  				 jupyterlab-topbar-text  \
-				 jupyterlab_bokeh \
+№				 jupyterlab_bokeh \
 			 	 jupyterlab_conda  \
  				 jupyterlab_tensorboard  \
    				 jupyterlab_toastify  \
 				 @telamonian/theme-darcula \
 				 @karosc/jupyterlab_dracula \ 
-				 @rahlir/theme-gruvbox \
+#				 @rahlir/theme-gruvbox \
  				 @mohirio/jupyterlab-horizon-theme \
 				 @yeebc/jupyterlab_neon_theme \ 
 				 jupyterlab-spreadsheet \
