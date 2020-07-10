@@ -75,7 +75,7 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
  				 @mohirio/jupyterlab-horizon-theme \
 				 @yeebc/jupyterlab_neon_theme \ 
 				 jupyterlab-spreadsheet \
-   				 qgrid && \
+#   				 qgrid && \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging
 
