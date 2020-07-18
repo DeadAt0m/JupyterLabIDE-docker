@@ -4,6 +4,7 @@ channels:
 - conda-forge
 - pytorch
 - anaconda
+- bokeh
 dependencies:
 # Jupyter
 - jupyterlab
@@ -70,8 +71,13 @@ dependencies:
 - black
 - jupyterlab_code_formatter
 - python-lmdb
+# experimental
+- itkwidgets
+- jupyter_bokeh
+- pyarrow==0.16.0
 - pip:
   - jupyterlab_hdf
+  - perspective-python 
   - ray
   - pyro-ppl 
   - rlgraph[ray]
@@ -81,9 +87,16 @@ dependencies:
   - jupyterlab-git
   - python-picard
   - pytorch_memlab
+  - jupyterlab_proxy_gui
+  - jupyter-dash
   - jupyter-lsp
   - jupyter-conda
   - nbresuse
   - bash_kernel
   - thop
+  - jupyter-server-proxy
+#jupyterhub
+  - jupyterhub-systemdspawner
+  - jupyterhub-ldap-authenticator
+
 
