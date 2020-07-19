@@ -1,8 +1,8 @@
 name: base
 channels:
+- pytorch
 - defaults
 - conda-forge
-- pytorch
 - anaconda
 - bokeh
 dependencies:
@@ -24,8 +24,8 @@ dependencies:
 - mayavi
 - cycler
 # ML
-- pytorch>=1.5
-- cudatoolkit=10.1
+- cudatoolkit=10.2
+- pytorch>=1.5.1
 - torchvision>=0.5
 - tensorflow-gpu
 - tensorboard
@@ -49,6 +49,7 @@ dependencies:
 - pytest-cov
 - pytest-faulthandler
 # other
+- conda-build
 - pip
 - mne
 - decorator
@@ -94,7 +95,6 @@ dependencies:
   - nbresuse
   - bash_kernel
   - thop
-  - jupyter-server-proxy
 #jupyterhub
   - jupyterhub-systemdspawner
   - jupyterhub-ldap-authenticator
