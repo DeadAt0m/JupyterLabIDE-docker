@@ -8,7 +8,7 @@ USER root
 # Install python and r enviroment
 COPY ./resources/conda-env-py3.yml conda-env-py3.yml
 RUN xvfb start && conda env update --file conda-env-py3.yml  && \
-    conda clean -tipsy  && \
+    conda config --set channel_priority false && conda update --all --strict-channel-priority  && conda clean -tisy  && \
     rm conda-env-py3.yml && fix-permissions $CONDA_DIR && conda list && xvfb stop 
 
 # Postinstallation fixes
