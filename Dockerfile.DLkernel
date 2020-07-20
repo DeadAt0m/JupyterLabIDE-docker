@@ -81,6 +81,5 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
 	jupyter labextension install jupyterlab_filetree && \
 	jupyter labextension install jupyterlab-theme-solarized-dark && \
 	jupyter labextension install shared_kernel && \
-	jupyter labextension install @finos/perspective-jupyterlab  && \
 	npm cache clean --force 
 
