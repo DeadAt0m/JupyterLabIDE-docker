@@ -78,7 +78,6 @@ dependencies:
 - pyarrow==0.16.0
 - pip:
   - jupyterlab_hdf
-  - perspective-python 
   - ray
   - pyro-ppl 
   - rlgraph[ray]
