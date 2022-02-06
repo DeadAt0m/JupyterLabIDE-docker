@@ -1,53 +1,75 @@
 name: base
 channels:
 - pytorch
-- defaults
+- bokeh
+- plotly
 - conda-forge
 - anaconda
-- bokeh
 dependencies:
-# Jupyter
+- nodejs
+# JupyterLab
 - jupyterlab
 - jupyterhub
-- widgetsnbextension
 - ipywidgets
-- nb_conda_kernels
-- jupyter_contrib_nbextensions
-- jupyter_nbextensions_configurator
-- nodejs
+- jupyter-server-proxy
+- jupyterlab-git
+- jupyterlab-lsp
+- jupyterlab_latex
+- jupyterlab-katex
+- jupyterlab-mathjax3
+- jupyterlab-language-pack-ru-RU
+- jupyterlab-system-monitor
+- jupyterlab-unfold
+- jupyter-archive
+- jupyterlab-spellchecker
+- mamba_gator
+- jupyterlab-fonts
+- jupyterlab-drawio
+- jupyterlab-favorites
+- jupyterlab-recents
+- jupyterlab-notifications
+- jupyter_bokeh
+- jupyterlab-tour
+- jupyterlab-fileopen
+- jupyterlab_code_formatter
+- jupyterlab_execute_time
+- jupyterlab-nvdashboard
 # Plotting, visualization
 - matplotlib
-- ipympl>=0.4.1
+- ipympl
 - seaborn
 - plotly
 - bokeh
 - mayavi
 - cycler
+- plotly
+- ipygany
+- voila
 # ML
-- cudatoolkit=10.2
-- pytorch>=1.5.1
-- torchvision>=0.5
-- tensorflow-gpu
-- tensorboard
-- keras>=2.3
-- ignite>=0.3
-- tensorboardx
-- scikit-learn
-- scipy>=1.4
-- pydot
-- catboost
-- statsmodels
+#- cudatoolkit=11.3
+#- pytorch
+#- torchvision
+#- tensorflow-gpu
+#- tensorboard
+#- pytorch-lightning
+#- tensorboardx
+#- scikit-learn
+#- scipy
+#- pydot
+#- catboost
+#- statsmodels
+#- jax
 # Image processing
-- opencv
-- pillow==6.1
-- cython
-- scikit-image
-- pywavelets
+#- opencv
+#- pillow
+#- cython
+#- scikit-image
+#- pywavelets
 # unit-testing
-- nose
-- pytest
-- pytest-cov
-- pytest-faulthandler
+#- nose
+#- pytest
+#- pytest-cov
+#- pytest-faulthandler
 # other
 - conda-build
 - pip
@@ -55,8 +77,8 @@ dependencies:
 - decorator
 - jinja2
 - numpy
-- pandas>=1.0.0
-- pyqt>=5.9
+- pandas
+- pyqt
 - python-dateutil
 - requests
 - sympy
@@ -64,36 +86,30 @@ dependencies:
 - dill
 - protobuf
 - ldap3
-- xeus-python>=0.6.7
 - ptvsd
-- jupyterlab-nvdashboard
-- jupyter-archive
-- python-language-server
+- python-lsp-server
 - black
-- jupyterlab_code_formatter
 - python-lmdb
-# experimental
-- itkwidgets
-- jupyter_bokeh
-- pyarrow==0.16.0
+- texlab
+- chktex
 - pip:
-  - jupyterlab_hdf
-  - ray
   - pyro-ppl 
-  - rlgraph[ray]
   - jupyter-tensorboard
   - arxiv
-  - jupyterlab_latex
-  - jupyterlab-git
   - python-picard
-  - pytorch_memlab
-  - jupyterlab_proxy_gui
-  - jupyter-dash
-  - jupyter-lsp
-  - jupyter-conda
-  - nbresuse
   - bash_kernel
   - thop
+  - jupyterlab-quickopen
+  - jupyterlab-horizon-theme
+  - jupyterlab-shanshu-theme
+  - jupyterlab_theme_sophon
+  - epi2melabs_theme
+  - jupyterlab-prodigy
+  - jupyterlab-spreadsheet-editor
+  - jupyterlab_markup
+  - databeanstalk-theme
+  - jupyterlab_theme_hale
+  - jupyterlab_hdf
 #jupyterhub
   - jupyterhub-systemdspawner
   - jupyterhub-ldap-authenticator

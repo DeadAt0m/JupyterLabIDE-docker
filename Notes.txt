@@ -1,0 +1,12 @@
+
+SPELLCHEKER SETTINGS:
+Advanced Settings Editor → Spellchecker and set onlineDictionaries
+[
+    {
+        "id": "en_US-online",
+        "aff": "https://cdn.jsdelivr.net/codemirror.spell-checker/latest/en_US.aff",
+        "dic": "https://cdn.jsdelivr.net/codemirror.spell-checker/latest/en_US.dic",
+        "name": "My favorite variant of English"
+    }
+]
+
