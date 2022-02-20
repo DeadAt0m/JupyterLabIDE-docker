@@ -61,6 +61,7 @@ dependencies:
 - jax
 - pyro-ppl 
 - python-picard
+- mlflow
 # Image processing
 - opencv
 - pillow
@@ -102,7 +103,7 @@ dependencies:
   - thop
   - jupyterlab-quickopen
   - jupyterlab-horizon-theme
-  - jupyterlab-shanshu-theme
+  - jupyterlab_theme_sophon
   - epi2melabs_theme
   - jupyterlab-prodigy
   - jupyterlab-spreadsheet-editor
