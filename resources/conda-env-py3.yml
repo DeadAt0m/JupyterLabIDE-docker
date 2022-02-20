@@ -1,12 +1,12 @@
 name: base
 channels:
 - pytorch
+- conda-forge
 - bokeh
 - plotly
-- conda-forge
-- anaconda
 dependencies:
 - nodejs
+- mamba
 # JupyterLab
 - jupyterlab
 - jupyterhub
@@ -46,31 +46,34 @@ dependencies:
 - ipygany
 - voila
 # ML
-#- cudatoolkit=11.3
-#- pytorch
-#- torchvision
-#- tensorflow-gpu
-#- tensorboard
-#- pytorch-lightning
-#- tensorboardx
-#- scikit-learn
-#- scipy
-#- pydot
-#- catboost
-#- statsmodels
-#- jax
+- cudatoolkit=11.3
+- pytorch >= 1.10.*
+- torchvision
+- tensorflow-gpu == 2.4.0
+- tensorboard
+- pytorch-lightning
+- tensorboardx
+- scikit-learn
+- scipy
+- pydot
+- catboost
+- statsmodels
+- jax
+- pyro-ppl 
+- python-picard
 # Image processing
-#- opencv
-#- pillow
-#- cython
-#- scikit-image
-#- pywavelets
+- opencv
+- pillow
+- cython
+- scikit-image
+- pywavelets
 # unit-testing
-#- nose
-#- pytest
-#- pytest-cov
-#- pytest-faulthandler
+- nose
+- pytest
+- pytest-cov
+- pytest-faulthandler
 # other
+- xeus-python
 - conda-build
 - pip
 - mne
@@ -92,17 +95,14 @@ dependencies:
 - python-lmdb
 - texlab
 - chktex
+- arxiv
 - pip:
-  - pyro-ppl 
   - jupyter-tensorboard
-  - arxiv
-  - python-picard
   - bash_kernel
   - thop
   - jupyterlab-quickopen
   - jupyterlab-horizon-theme
   - jupyterlab-shanshu-theme
-  - jupyterlab_theme_sophon
   - epi2melabs_theme
   - jupyterlab-prodigy
   - jupyterlab-spreadsheet-editor
