@@ -7,9 +7,9 @@ USER root
 
 # Install python and r enviroment
 COPY ./resources/conda-env-py3.yml conda-env-py3.yml
-RUN xvfb start && conda env update --file conda-env-py3.yml  && \
-    conda config --set channel_priority false && conda update --all --strict-channel-priority  && conda clean -tisy  && \
-    rm conda-env-py3.yml && fix-permissions $CONDA_DIR && conda list && xvfb stop 
+RUN xvfb start && mamba env update --file conda-env-py3.yml  && \
+    mamba config --set channel_priority false && mamba clean -tisy  && \
+    rm conda-env-py3.yml && fix-permissions $CONDA_DIR && mamba list && xvfb stop 
 
 # Postinstallation fixes
 ENV DISPLAY :2
@@ -21,9 +21,7 @@ RUN chown -R $NB_USER:$NB_GID /home/$NB_USER  && chmod 777 -R /home/$NB_USER/.ju
 USER $NB_USER
 
 # Configure jupyter notebook and lab extenstions
-RUN jupyter labextension install @jupyterlab/hdf5 \
-                                 @yeebc/jupyterlab_neon_theme && \
-    npm install --save-dev bash-language-server \
+RUN npm install --save-dev bash-language-server \
                            dockerfile-language-server-nodejs \
                            unified-language-server \
                            vscode-html-languageserver-bin \
