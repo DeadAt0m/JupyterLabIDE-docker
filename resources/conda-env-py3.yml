@@ -62,18 +62,23 @@ dependencies:
 - pyro-ppl 
 - python-picard
 - mlflow
+- cupy
+- numba
 # Image processing
 - opencv
 - pillow
 - cython
 - scikit-image
 - pywavelets
+- libjpeg-turbo
 # unit-testing
 - nose
 - pytest
 - pytest-cov
 - pytest-faulthandler
 # other
+- compilers
+- pkg-config
 - xeus-python
 - conda-build
 - pip
@@ -98,7 +103,6 @@ dependencies:
 - chktex
 - arxiv
 - pip:
-  - jupyter-tensorboard
   - bash_kernel
   - thop
   - jupyterlab-quickopen
@@ -110,7 +114,8 @@ dependencies:
   - jupyterlab_markup
   - databeanstalk-theme
   - jupyterlab_theme_hale
-  - jupyterlab_hdf
+  - git+https://github.com/cliffwoolley/jupyter_tensorboard.git
+  - git+https://github.com/chaoleili/jupyterlab_tensorboard.git
 #jupyterhub
   - jupyterhub-systemdspawner
   - jupyterhub-ldap-authenticator
